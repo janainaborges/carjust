@@ -30,10 +30,6 @@ const Tickets: React.FC = () => {
   const [inputValue, setInputValue] = useState("");
   const [inputValueText, setInputValueText] = useState("");
 
-  // const options: SelectOption[] = [
-  //   { value: capture?.price?.discount.toLocaleString(), label: "Desconto" },
-  //   { value: capture?.price?.full.toLocaleString(), label: "Total" },
-  // ];
 
   const optionsTwo: SelectOption[] = [
     { value: "value1", label: "Valor 1" },
@@ -62,7 +58,7 @@ const Tickets: React.FC = () => {
 
   return (
     <div className="bg-light flex flex-col w-full">
-      {/* Ajuste nas margens e no gap para telas menores */}
+
       <div className="mx-4 my-8 md:m-8 gap-4 md:gap-8 flex flex-col md:flex-row">
         <div className="flex-1 flex flex-col gap-4 md:gap-8 bg-white p-4 md:p-8">
           <InputSearch
@@ -90,8 +86,7 @@ const Tickets: React.FC = () => {
             )
           )}
         </div>
-  
-        {/* Ajuste para que este bloco fique abaixo do conteúdo principal em telas menores */}
+
         <div className="flex-1 md:flex-2 flex flex-col gap-4 md:gap-8 bg-white p-4 md:p-8">
           <form onSubmit={handleSubmit} className="flex flex-col gap-2.5">
             {capture.name ? (
