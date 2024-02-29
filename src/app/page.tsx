@@ -1,12 +1,15 @@
-"use client"
 
-import { TicketsProvider } from "@/provider/TicketContext";
-import Tickets from "./just/page";
+"use client"
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
-  return (
-    <TicketsProvider>
-        <Tickets />
-    </TicketsProvider>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push('/just');
+  }, [router]);
+
+  return null; 
 }
+

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
-import NavBar from "../components/navbar/navbar";
-import Footer from "../components/footer/footer";
-import StyledComponentsRegistry from "@/lib/registry";
-import "./globals.css"
+import "./globals.css";
+import NavBar from "@/components/navbar/navbar";
+import Footer from "@/components/footer/footer";
+import { TicketsProvider } from "@/provider/TicketContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,15 +20,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-      <StyledComponentsRegistry>
         <main>
-          <NavBar />
-          <div className="min-h-screen basis-full overflow-scroll flex flex-start">
-            {children}
-          </div>
-         <Footer/>
+          <TicketsProvider>
+            <NavBar />
+            <div className="min-h-screen max-w-full basis-full overflow-scroll flex flex-center">
+              {children}
+            </div>
+            <Footer />
+          </TicketsProvider>
         </main>
-        </StyledComponentsRegistry>
       </body>
     </html>
   );
